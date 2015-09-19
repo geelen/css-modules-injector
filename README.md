@@ -6,7 +6,7 @@ A simple HTML parser & CSS Modules injector. Working with the following HTML:
 <html>
   <head>
     <link css-modules-inject>
-    /* or <style css-modules-inject></style> if you want to inline the output */
+    <!-- or <style css-modules-inject></style> if you want to inline the output -->
   </head>
   <body module="main.css" styleName="body">
     <header module="header.css" styleName="outer">
@@ -26,7 +26,7 @@ It compiles the CSS Modules referenced and injects their generated class names:
 ```html
 <html>
   <head>
-    <link href="styles.css"> /* Has the compiled output */
+    <link href="styles.css">
   </head>
   <body class="main_body_abcd1234">
     <header class="header_outer_bcde2345">
