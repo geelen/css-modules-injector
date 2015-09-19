@@ -8,14 +8,14 @@ A simple HTML parser & CSS Modules injector. Working with the following HTML:
     <link css-modules-inject>
     <!-- or <style css-modules-inject></style> if you want to inline the output -->
   </head>
-  <body module="main.css" styleName="body">
-    <header module="header.css" styleName="outer">
-      <h1 styleName="first">CSS Modules</h1>
-      <h2 styleName="second">Statically compiled!</h2>
+  <body module="main.css" style-name="body">
+    <header module="header.css" style-name="outer">
+      <h1 style-name="first">CSS Modules</h1>
+      <h2 style-name="second">Statically compiled!</h2>
     </header>
-    <section module="copy.css" styleName="outer">
-      <p styleName="p first">Welcome to the future of CSS</p>
-      <p styleName="p">We've got fun and games</p>
+    <section module="copy.css" style-name="outer">
+      <p style-name="p first">Welcome to the future of CSS</p>
+      <p style-name="p">We've got fun and games</p>
     </section>
   </body>
 </html>
@@ -67,15 +67,15 @@ injector.inject(html).then(output => {
 
 ### Nested Modules
 
-By default, all `styleName` properties look to the nearest parent (or themselves) that define a `module`. This encourages full encapsulation by default — a tag should only be referencing styles from a single module, and you should use Composition for style reuse.
+By default, all `style-name` properties look to the nearest parent (or themselves) that define a `module`. This encourages full encapsulation by default — a tag should only be referencing styles from a single module, and you should use Composition for style reuse.
 
 However, if you do want to reference a style in an *outer* module, the following syntax is supported:
 
 ```html
-<body module-main="main.css" styleName="main.body">
-  <header module="header.css" styleName="main.bannerText outer">
-    <h1 styleName="main.font-replace first">CSS Modules</h1>
-    <h2 styleName="second">Statically compiled!</h2>
+<body module-main="main.css" style-name="main.body">
+  <header module="header.css" style-name="main.bannerText outer">
+    <h1 style-name="main.font-replace first">CSS Modules</h1>
+    <h2 style-name="second">Statically compiled!</h2>
   </header>
   ...
 </body>
